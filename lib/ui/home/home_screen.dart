@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_c10_thursday/ui/home/hadeth_tab/hadeth_tab.dart';
 import 'package:islami_c10_thursday/ui/home/quran_tab/quran_tab.dart';
 import 'package:islami_c10_thursday/ui/home/radio_tab/radio_tab.dart';
+import 'package:islami_c10_thursday/ui/home/settings_tab/settings_tab.dart';
 import 'package:islami_c10_thursday/ui/home/tasbeh_tab/tasbeh_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -58,6 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   AssetImage('assets/images/radio_ic.png'),
                 ),
                 label: 'Radio'),
+            BottomNavigationBarItem(
+                backgroundColor: Color(0xFFB7935F),
+                icon: Icon(Icons.settings),
+                label: 'settings'),
           ],
         ),
         body: tabs[selectedIndexTab],
@@ -70,5 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
     HadethTab(),
     TasbehTab(),
     RadioTab(),
+    SettingsTab(),
   ];
 }
