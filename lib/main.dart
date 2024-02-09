@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c10_thursday/ui/home/hadeth_tab/hadeth_details_screen.dart';
 import 'package:islami_c10_thursday/ui/home/home_screen.dart';
 import 'package:islami_c10_thursday/ui/home/quran_tab/quran_details_screen.dart';
-import 'package:islami_c10_thursday/ui/splash_screen.dart';
 
 void main() {
   runApp(MyApplication());
@@ -21,6 +21,7 @@ class MyApplication extends StatelessWidget {
             selectedItemColor: Colors.black, unselectedItemColor: Colors.white),
       ),
       routes: {
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
         QuranDetailsScreen.routeName: (context) => QuranDetailsScreen(),
         HomeScreen.routeName: (_) => HomeScreen(),
         //  SplashScreen.routeName : (_)=> SplashScreen(),
