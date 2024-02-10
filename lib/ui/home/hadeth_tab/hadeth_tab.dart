@@ -28,22 +28,21 @@ class _HadethTabState extends State<HadethTab> {
                       border: Border.symmetric(
                         horizontal: BorderSide(
                           width: 2,
-                          color: Color(0xFFB7935F),
+                          color: Theme.of(context).dividerColor,
                         ),
                       ),
                     ),
                     child: Text(
                       'Ahadeth',
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.titleMedium,
                     )),
                 Expanded(
                   child: ListView.separated(
                       itemBuilder: (context, index) =>
                           HadethTitleWidget(hadeth: ahadeth[index]),
                       separatorBuilder: (context, index) => Container(
-                            margin: EdgeInsets.symmetric(horizontal: 45),
-                            color: Color(0xFFB7935F),
+                        margin: EdgeInsets.symmetric(horizontal: 45),
+                            color: Theme.of(context).dividerColor,
                             width: double.infinity,
                             height: 2,
                           ),

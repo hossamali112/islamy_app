@@ -121,27 +121,25 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Expanded(
-              //flex: 1,
-              child: Image.asset('assets/images/quran_header_image.png')),
-          Expanded(
-            //flex: 3,
-            child: ListView.separated(
-                itemBuilder: (context, index) =>
-                    ChapterTitle(suraTitle: suraNames[index], index: index),
-                separatorBuilder: (context, index) => Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.symmetric(horizontal: 48),
-                      height: 2,
-                      color: Color(0xFFB7935F),
-                    ),
-                itemCount: suraNames.length),
-          )
+    return Column(
+      children: [
+        Expanded(
+            flex: 1,
+            child: Image.asset('assets/images/quran_header_image.png')),
+        Expanded(
+          flex: 3,
+          child: ListView.separated(
+              itemBuilder: (context, index) =>
+                  ChapterTitle(suraTitle: suraNames[index], index: index),
+              separatorBuilder: (context, index) => Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 48),
+                    height: 2,
+                    color: Theme.of(context).dividerColor,
+                  ),
+              itemCount: suraNames.length),
+        )
         ],
-      ),
     );
   }
 }

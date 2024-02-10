@@ -19,7 +19,7 @@ class ChapterTitle extends StatelessWidget {
           // padding: EdgeInsets.all(12),
           child: Text(
             suraTitle,
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.titleMedium,
           )),
     );
   }

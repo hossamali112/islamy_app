@@ -4,6 +4,7 @@ import 'package:islami_c10_thursday/ui/home/quran_tab/quran_tab.dart';
 import 'package:islami_c10_thursday/ui/home/radio_tab/radio_tab.dart';
 import 'package:islami_c10_thursday/ui/home/settings_tab/settings_tab.dart';
 import 'package:islami_c10_thursday/ui/home/tasbeh_tab/tasbeh_tab.dart';
+import 'package:islami_c10_thursday/ui/styles/my_thtme_data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'Home-Screen';
@@ -20,12 +21,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),
+              image: AssetImage(MyThemeData.isDarkSelected
+                  ? 'assets/images/main_background_dark.png'
+                  : 'assets/images/main_background.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text('Islami'),
+          title: Text(
+            'Islami',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndexTab,
@@ -36,31 +42,31 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                backgroundColor: Color(0xFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(
                   AssetImage('assets/images/quran_ic.png'),
                 ),
                 label: 'Quran'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(
                   AssetImage('assets/images/hadeth_ic.png'),
                 ),
                 label: 'Hadeth'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(
                   AssetImage('assets/images/sebha_ic.png'),
                 ),
                 label: 'Tasbeeh'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: ImageIcon(
                   AssetImage('assets/images/radio_ic.png'),
                 ),
                 label: 'Radio'),
             BottomNavigationBarItem(
-                backgroundColor: Color(0xFFB7935F),
+                backgroundColor: Theme.of(context).primaryColor,
                 icon: Icon(Icons.settings),
                 label: 'settings'),
           ],

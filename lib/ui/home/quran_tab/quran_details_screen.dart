@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_c10_thursday/ui/home/quran_tab/chapter_title.dart';
+import 'package:islami_c10_thursday/ui/styles/my_thtme_data.dart';
 
 class QuranDetailsScreen extends StatefulWidget {
   static const String routeName = 'Quran-Details';
@@ -19,7 +20,9 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),
+              image: AssetImage(MyThemeData.isDarkSelected
+                  ? 'assets/images/main_background_dark.png'
+                  : 'assets/images/main_background.png'),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
@@ -38,20 +41,19 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
                     margin: EdgeInsets.all(18),
-                    color: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
-                    child: Expanded(
-                        child: ListView.separated(
+                    child: ListView.separated(
                       separatorBuilder: (context, index) => Container(
                           margin: EdgeInsets.symmetric(horizontal: 23),
-                          child: Divider(color: Color(0xFFB7935F))),
+                          child:
+                              Divider(color: Theme.of(context).dividerColor)),
                       itemBuilder: (context, index) => Text(
                         '${verses[index]} (${index + 1})',
                         textAlign: TextAlign.center,
                       ),
                       itemCount: verses.length,
-                    )),
+                    ),
                   ),
                 ),
               ),
